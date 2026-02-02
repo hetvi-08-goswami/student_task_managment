@@ -1,5 +1,9 @@
-.form-container{
-  background-color:blue;
-  width: 200%;
-  height:100%;
+
+.error-msg{
+  color:red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
 }
