@@ -6,17 +6,14 @@ import TaskList from "../components/TaskList";
 const Dashboard = () => {
   const navigate = useNavigate() 
     
-    const[data,setTasks]=useState([])
+    const[task,setTasks]=useState([])
 
-    useEffect(()=>{
-      fetchData();
-    },[]);
     
 
-    const fetchData =  async()=>{
+    const fetchData =  async()=> {
       try{
-        const responce=await fetch
-        const data=responce.json();
+        const response = await fetch ("http://localhost:3000/tasks");
+        const data= await response.json();
         setTasks(data);
       }
         catch(error){
@@ -25,6 +22,9 @@ const Dashboard = () => {
       }
     }
   
+    useEffect(()=>{
+      fetchData();
+    },[]);
 
   const handleLogout = () => {
     localStorage.removeItem('loginData')
@@ -36,7 +36,7 @@ const Dashboard = () => {
    <div>
     <Navbar title="Task Manager" onLogout={handleLogout}/>
     <h1>My Task</h1>
-    <TaskList/>
+    <TaskList tasks={task}/>
    </div>
   )
 }
