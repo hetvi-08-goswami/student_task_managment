@@ -1,4 +1,11 @@
-function TaskList({ tasks }) {
+function TaskList({ tasks, editingTask, deletingTask }) {
+  const handleEditClick = (task) => {
+    editingTask(task);
+  };
+
+  const handleDeleteClick = (task) => {
+    deletingTask(task);
+  };
   return (
     <div className="task-grid">
       {/* tasc card 1 */}
@@ -18,6 +25,7 @@ function TaskList({ tasks }) {
               className="btn-icon"
               style={{ background: "#00d2ff" }}
               title="Edit Task"
+              onClick={() => handleEditClick(task)}
             >
               ✏️
             </button>
@@ -32,6 +40,7 @@ function TaskList({ tasks }) {
               className="btn-icon"
               style={{ background: "#ff416c" }}
               title="Delete Task"
+              onClick={() => handleDeleteClick(task.id)}
             >
               delete
             </button>

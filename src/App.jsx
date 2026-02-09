@@ -13,12 +13,7 @@ import {
 const DefaultRoute = () => {
   const loginData = JSON.parse(localStorage.getItem("loginData"));
   if (loginData) {
-    return (
-      <Navigate
-        to="/dashboard"
-        replace
-      />
-    );
+    return <Navigate to="/dashboard" replace />;
   }
   return <Navigate to="/login" replace />;
 };
@@ -31,27 +26,27 @@ function App() {
     },
     {
       path: "/login",
-      element:(
+      element: (
         <AuthGuard required={false}>
-         < Login />
-         </AuthGuard>
+          <Login />
+        </AuthGuard>
       ),
     },
     {
       path: "/register",
       element: (
         <AuthGuard required={false}>
-      <Register />
-      </AuthGuard>
+          <Register />
+        </AuthGuard>
       ),
     },
 
     {
       path: "/dashboard",
-     element: (
+      element: (
         <AuthGuard required={true}>
-      <Dashboard />
-      </AuthGuard>
+          <Dashboard />
+        </AuthGuard>
       ),
     },
   ]);
