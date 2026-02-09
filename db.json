@@ -5,7 +5,7 @@
       "title": "welcome task",
       "description": "this is your task served from json-server",
       "dueDate": "2025-09-31",
-      "completed": false,
+      "completed": true,
       "priority": "medium"
     },
     {
@@ -14,7 +14,7 @@
       "description": "asdadasd",
       "dueDate": "2026-02-13",
       "priority": "",
-      "completed": false
+      "completed": true
     },
     {
       "id": "18d3",

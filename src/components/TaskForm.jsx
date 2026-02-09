@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TaskForm = ({ addTask ,editingTask ,updateTask } ) => {
+const TaskForm = ({ addTask, editingTask, updateTask }) => {
   //declaration
   const [taskData, setTaskData] = useState({
     title: "",
@@ -13,7 +13,7 @@ const TaskForm = ({ addTask ,editingTask ,updateTask } ) => {
 
   useEffect(() => {
     setTaskData(editingTask);
-  }, [editingTask])
+  }, [editingTask]);
 
   const handleInputChange = (e) => {
     setTaskData({
